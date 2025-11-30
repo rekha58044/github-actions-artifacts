@@ -47,5 +47,5 @@ jobs:
         with:
           name: dist-files
       - name:  display artifacts
-        run: echo {{needs.build.outputs.script-file}}
+        run: echo "${{needs.build.outputs.script-file}}"
         
