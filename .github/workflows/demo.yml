@@ -19,7 +19,7 @@ jobs:
   build:
     needs: test
     outputs:
-      script-file: ${{steps.publish.output.script-file}}
+      script-file: ${{steps.publish.outputs.script-file}}
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -47,5 +47,5 @@ jobs:
         with:
           name: dist-files
       - name:  display artifacts
-        run: ls
+        run: echo {{needs.build.outputs.script-file}}
         
